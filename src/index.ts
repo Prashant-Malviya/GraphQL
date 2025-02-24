@@ -21,19 +21,19 @@ const typeDefs = `
 
 //acutal logic will be in resolver
 const resolvers = {
-    Query: {
-        greetings: ()=> "Namaste!"
-    },
+  Query: {
+    greetings: () => "Namaste!",
+  },
 };
 
-const server = new ApolloServer({typeDefs,resolvers});
+const server = new ApolloServer({ typeDefs, resolvers });
 
 startStandaloneServer(server, {
-    listen: { port },
+  listen: { port },
 })
-    .then(() => {
-        console.log(`Server is working on Port: ${port} in ${envMode} Mode.`);
-    })
-    .catch((err) => {
-        console.error("Error starting the server:", err);
-    });
+  .then(() => {
+    console.log(`Server is working on Port: ${port} in ${envMode} Mode.`);
+  })
+  .catch((err) => {
+    console.error("Error starting the server:", err);
+  });
